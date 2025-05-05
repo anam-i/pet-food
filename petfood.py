@@ -163,12 +163,16 @@ if submit:
         results_df = filter_products(df_pet_info, df_products)
 
         st.markdown("🍽️ **Recommended Products:**")
+	# Convert filtered results to DataFrame
+	df_filtered = pd.DataFrame(results_df)
+	
+	# Display the filtered DataFrame
+	st.write("Filtered Product Recommendations:")
+	st.dataframe(results_df)
+        # if not results_df.empty:
+        #     for product in results_df["product_name"]:
+        #         st.write(f"- {product}")
+        #     st.success(f"{len(results_df)} products recommended.")
+        # else:
+        #     st.warning("No suitable products found based on the provided details.")
 
-        if not results_df.empty:
-            for product in results_df["product_name"]:
-                st.write(f"- {product}")
-            st.success(f"{len(results_df)} products recommended.")
-        else:
-            st.warning("No suitable products found based on the provided details.")
-
-    

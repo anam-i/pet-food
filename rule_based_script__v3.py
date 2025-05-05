@@ -500,7 +500,7 @@ def filter_products(df_pet_info, df_products):
     """Main filtering logic for pet products."""
     # species_col = f"Species_{df_pet_info.iloc[0]['species']}"
     species_col = f"Species_{df_pet_info.iloc[0]['species']}"
-    df_filtered = filter_by_condition(df_products, species_col, 1)
+    df_filtered = filter_by_condition(df_products, species_col, 0)
 
     # Filter by main issue (if any)
     # main_issue = df_pet_info['main_issue']

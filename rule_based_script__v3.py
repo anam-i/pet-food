@@ -502,7 +502,7 @@ def filter_products(df_pet_info, df_products):
     df_filtered = filter_by_condition(df_products, species_col, 1)
 
     # Filter by main issue (if any)
-    main_issue = df_pet_info['main issue'].strip()
+    # main_issue = df_pet_info['main issue'].strip()
     if main_issue and main_issue in disease_product_mapping:
         disease_info = disease_product_mapping[main_issue]
         #print("disease_info",disease_info)

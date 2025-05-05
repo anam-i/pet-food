@@ -498,10 +498,11 @@ def filter_life_stage(df, life_stage):
 
 def filter_products(df_pet_info, df_products):
     """Main filtering logic for pet products."""
-
+    species_col = f"Species_{df_pet_info['species']}"
+    df_filtered = filter_by_condition(df_products, species_col, 1)
 
     # Filter by main issue (if any)
-    main_issue = df_pet_info['Main Issue'].strip()
+    main_issue = df_pet_info['main issue'].strip()
     if main_issue and main_issue in disease_product_mapping:
         disease_info = disease_product_mapping[main_issue]
         #print("disease_info",disease_info)
@@ -515,14 +516,14 @@ def filter_products(df_pet_info, df_products):
 
     # Filter by allergies
     if df_pet_info['Allergy'] == 1:
-        for ingredient in df_pet_info['Allergic_to']:
+        for ingredient in df_pet_info['allergic_to']:
             if ingredient == 'unknown':
               filter_by_condition(df_filtered, 'category_non-allergenic', 1)
             else:
              df_filtered = filter_by_condition(df_filtered, f'Ingredients_{ingredient}', 0)
 
     # Filter by body score
-    bds = df_pet_info['Body Score (BDS)']
+    bds = df_pet_info['body score (bds)']
     if bds >= 7: # >8 Means Obesity  and >7 Overweight
         df_filtered = filter_by_condition(df_filtered, 'for_weight management', 1)
         df_filtered = filter_by_condition(df_filtered, 'not_for_overweight', 0)
@@ -537,23 +538,23 @@ def filter_products(df_pet_info, df_products):
         df_filtered = filter_by_condition(df_filtered, 'category_high protein', 1)
 
     # Filter by pregnancy/lactation
-    if df_pet_info['Pregnant']:
+    if df_pet_info['pregnant']:
         life_stage = 'growth'
         df_filtered = filter_by_condition(df_filtered, 'not_for_pregnancy', 0)
 
-    if df_pet_info['Lactating']:
+    if df_pet_info['lactating']:
         life_stage = 'growth'
         df_filtered = filter_by_condition(df_filtered, 'not_for_lactation', 0)
 
     # Filter by life stage
-    if not (df_pet_info['Pregnant'] or df_pet_info['Lactating']):
-      life_stage = df_pet_info['Life Stage']
+    if not (df_pet_info['pregnant'] or df_pet_info['lactating']):
+      life_stage = df_pet_info['life_stage']
     df_filtered = filter_life_stage(df_filtered, life_stage)
     #print("rows after life_stage:",len(df_filtered))
 
     # Filter by other issues
-    if df_pet_info['Other Issues']:
-        for issue in df_pet_info['Other Issues']:
+    if df_pet_info['other issues']:
+        for issue in df_pet_info['other issues']:
             if issue in disease_product_mapping:
                 disease_info = disease_product_mapping[issue]
                 #print("Other_disease_info",disease_info)
@@ -563,7 +564,7 @@ def filter_products(df_pet_info, df_products):
                 df_filtered = filter_category_tags(df_filtered, disease_info)
 
     # Filter by breed size and activity level
-    df_filtered = filter_by_condition(df_filtered, f'breed_size_{df_pet_info["Breed Size"]}', 1)
+    df_filtered = filter_by_condition(df_filtered, f'breed_size_{df_pet_info["breed_size"]}', 1)
     if df_pet_info['Activity Level'] == 'active':
         df_filtered = filter_by_condition(df_filtered, 'not_for_active pets', 0)
         df_filtered = filter_by_condition(df_filtered, 'category_high calorie', 1)

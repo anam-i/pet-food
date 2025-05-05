@@ -1,4 +1,4 @@
-t_import streamlit as st
+import streamlit as st
 import pandas as pd
 from rule_based_script__v3 import disease_product_mapping, filter_products
 

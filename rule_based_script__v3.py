@@ -516,8 +516,8 @@ def filter_products(df_pet_info, df_products):
         #print("rows after category:",len(df_filtered))
 
     # Filter by allergies
-    if df_pet_info['allergy'] == 1:
-        for ingredient in df_pet_info['allergic_to']:
+    if df_pet_info['has_allergy'] == 1:
+        for ingredient in df_pet_info['selected_allergies']:
             if ingredient == 'unknown':
               filter_by_condition(df_filtered, 'category_non-allergenic', 1)
             else:

@@ -498,9 +498,7 @@ def filter_life_stage(df, life_stage):
 
 def filter_products(df_pet_info, df_products):
     """Main filtering logic for pet products."""
-    # # Initial filter by species
-    # species_col = f"Species_{df_pet_info['Species']}"
-    df_filtered = filter_by_condition(df_products, species, 1)
+
 
     # Filter by main issue (if any)
     main_issue = df_pet_info['Main Issue'].strip()

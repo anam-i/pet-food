@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from Rule_Based_Script__V3 import add_recommendations_to_pets, disease_product_mapping
+from rule_based_script__v3 import add_recommendations_to_pets, disease_product_mapping
 
 # Load product data
 df_products = pd.read_csv("encoded_all_products.csv")

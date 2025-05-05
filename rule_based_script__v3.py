@@ -613,18 +613,23 @@ def add_recommendations_to_pets(pet_info_df, df_products):
 
     for idx, row in pet_info_df.iterrows():
         pet_profile = {
-            "Species": row['Species'],
-            "Main Issue": str(row.get('Main Issue', '')).lower(),
-            "Allergy": int(row.get('Allergy', 0)),
-            "Allergic_to": row.get('Allergic_to', '').split(', ') if pd.notna(row.get('Allergic_to')) else [],
-            "Pregnant": bool(row.get('Pregnant', False)),
-            "Lactating": bool(row.get('Lactating', False)),
-            "Body Score (BDS)": float(row.get('Body Score (BDS)', 5)),
-            "Life Stage": str(row.get('Life_stage', 'adult')).lower(),
-            "Breed Size": str(row.get('Breed_size', 'medium')).lower(),
-            "Activity Level": str(row.get('Activity Level', 'Moderate')).lower(),
-            "Other Issues": [issue.strip().lower() for issue in str(row.get('Other Issues', '')).split(',')
-                            if issue.strip()] if pd.notna(row.get('Other Issues')) else []
+df_pet_info = df_pet_info.rename(columns={
+    "species": "Species",
+    "life_stage": "Life Stage",
+    "weight": "Weight",
+    "age (months)": "Age (months)",
+    "activity level": "Activity Level",
+    "main issue": "Main Issue",
+    "other issues": "Other Issues",
+    "gender": "Gender",
+    "breed": "Breed",
+    "breed_size": "Breed Size",
+    "body score (bds)": "Body Score (BDS)",
+    "pregnant": "Pregnant",
+    "lactating": "Lactating",
+    "allergy": "Allergy",
+    "allergic_to": "Allergic_to"
+})
         }
         #print("pet_profile",pet_profile)
         product_ids, count = filter_products(pet_profile, df_products)

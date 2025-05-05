@@ -4,6 +4,7 @@ from rule_based_script__v3 import disease_product_mapping, filter_products
 
 # Load product data
 df_products = pd.read_csv("encoded_all_products.csv")
+df_productdata = pd.read_csv("Products_final_cleaned.csv")
 
 # ------------------ Hardcoded Lists ------------------
 
@@ -160,7 +161,15 @@ if submit:
             "allergic_to": selected_allergies
         }])
         product_ids, count = filter_products(df_pet_info, df_products)
-    
+
+
+    # Filter rows from the CSV where Product_id matches
+	recommended_products = df_productdata[df_productdata['Product_ID'].isin(product_ids)]
     # Display the filtered products
         st.write(f"Recommended Products: {product_ids}")
+	# Display the product names in Streamlit
+	st.write("### Recommended Products:")
+	for _, row in recommended_products.iterrows():
+ 	   st.write(f"- {row['Product_Name']} (ID: {row['Product_ID']})")
+
 

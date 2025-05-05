@@ -613,23 +613,23 @@ def add_recommendations_to_pets(pet_info_df, df_products):
 
     for idx, row in pet_info_df.iterrows():
         pet_profile = {
-df_pet_info = df_pet_info.rename(columns={
-    "species": "Species",
-    "life_stage": "Life Stage",
-    "weight": "Weight",
-    "age (months)": "Age (months)",
-    "activity level": "Activity Level",
-    "main issue": "Main Issue",
-    "other issues": "Other Issues",
-    "gender": "Gender",
-    "breed": "Breed",
-    "breed_size": "Breed Size",
-    "body score (bds)": "Body Score (BDS)",
-    "pregnant": "Pregnant",
-    "lactating": "Lactating",
-    "allergy": "Allergy",
-    "allergic_to": "Allergic_to"
-})
+        df_pet_info = df_pet_info.rename(columns={
+            "species": "Species",
+            "life_stage": "Life Stage",
+            "weight": "Weight",
+            "age (months)": "Age (months)",
+            "activity level": "Activity Level",
+            "main issue": "Main Issue",
+            "other issues": "Other Issues",
+            "gender": "Gender",
+            "breed": "Breed",
+            "breed_size": "Breed Size",
+            "body score (bds)": "Body Score (BDS)",
+            "pregnant": "Pregnant",
+            "lactating": "Lactating",
+            "allergy": "Allergy",
+            "allergic_to": "Allergic_to"
+        })
         }
         #print("pet_profile",pet_profile)
         product_ids, count = filter_products(pet_profile, df_products)

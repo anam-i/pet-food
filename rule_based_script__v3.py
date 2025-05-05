@@ -12,8 +12,6 @@ import numpy as np
 import logging
 
 df_products = pd.read_csv('encoded_all_products.csv')
-#df_pets_info = pd.read_excel('Pet_info_dog_cat.xlsx')
-df_pets_info = pd.read_excel('real pet profile.xlsx')
 
 """Flow of the script
 ==================

@@ -162,8 +162,8 @@ if submit:
         product_ids, count = filter_products(df_pet_profile, df_products)
     
     # Display the filtered products
-	st.write(f"Pet Profile: {pet_profile}")
-	st.write(f"Recommended Products: {product_ids}")
+        st.write(f"Pet Profile: {pet_profile}")
+        st.write(f"Recommended Products: {product_ids}")
 
  #        st.markdown("🍽️ **Recommended Products:**")
 	# # Convert filtered results to DataFrame

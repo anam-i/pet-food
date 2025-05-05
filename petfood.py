@@ -160,7 +160,7 @@ if submit:
             "allergic_to": selected_allergies
         }])
 
-        results_df = add_recommendations_to_pets(df_pet_info, df_products, disease_product_mapping)
+        results_df = add_recommendations_to_pets(df_pet_info, df_products)
 
         st.markdown("🍽️ **Recommended Products:**")
 

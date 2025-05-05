@@ -502,7 +502,7 @@ def filter_products(df_pet_info, df_products):
     df_filtered = filter_by_condition(df_products, species_col, 1)
 
     # Filter by main issue (if any)
-    main_issue = df_pet_info['main_health_condition']
+    main_issue = df_pet_info['main_issue']
     if main_issue and main_issue in disease_product_mapping:
         disease_info = disease_product_mapping[main_issue]
         #print("disease_info",disease_info)
@@ -553,8 +553,8 @@ def filter_products(df_pet_info, df_products):
     #print("rows after life_stage:",len(df_filtered))
 
     # Filter by other issues
-    if df_pet_info['other_health_conditions']:
-        for issue in df_pet_info['other issues']:
+    if df_pet_info['other_issues']:
+        for issue in df_pet_info['other_issues']:
             if issue in disease_product_mapping:
                 disease_info = disease_product_mapping[issue]
                 #print("Other_disease_info",disease_info)

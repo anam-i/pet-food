@@ -441,8 +441,6 @@ disease_product_mapping = {
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-pet = df_pet_info.iloc[0].to_dict()
-
 def filter_by_condition(df, column, value):
     """Filter DataFrame where `column` == `value` if column exists and has valid values."""
     if column in df.columns and df[column].any():
@@ -541,22 +539,22 @@ def filter_products(df_pet_info, df_products):
         df_filtered = filter_by_condition(df_filtered, 'category_high protein', 1)
 
     # Filter by pregnancy/lactation
-    if df_pet_info['pregnant']:
+    if df_pet_info.iloc[0]['pregnant'] == 1:
         life_stage = 'growth'
         df_filtered = filter_by_condition(df_filtered, 'not_for_pregnancy', 0)
 
-    if df_pet_info['lactating']:
+    if df_pet_info.iloc[0]['lactating'] == 1:
         life_stage = 'growth'
         df_filtered = filter_by_condition(df_filtered, 'not_for_lactation', 0)
 
     # Filter by life stage
-    if not (df_pet_info['pregnant'] or df_pet_info['lactating']):
-      life_stage = df_pet_info['life_stage']
+    if not (df_pet_info.iloc[0]['pregnant'] == 1 or df_pet_info.iloc[0]['lactating'] == 1):
+      life_stage = df_pet_info.iloc[0]['life_stage']
     df_filtered = filter_life_stage(df_filtered, life_stage)
     #print("rows after life_stage:",len(df_filtered))
 
     # Filter by other issues
-    if df_pet_info['other_issues']:
+    if df_pet_info.iloc[0]['other_issues'] == 1:
         for issue in df_pet_info['other_issues']:
             if issue in disease_product_mapping:
                 disease_info = disease_product_mapping[issue]

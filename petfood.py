@@ -164,11 +164,11 @@ if submit:
 
         st.markdown("🍽️ **Recommended Products:**")
 	# Convert filtered results to DataFrame
-	df_filtered = pd.DataFrame(results_df)
+        df_filtered = pd.DataFrame(results_df)
 	
 	# Display the filtered DataFrame
-	st.write("Filtered Product Recommendations:")
-	st.dataframe(results_df)
+        st.write("Filtered Product Recommendations:")
+        st.dataframe(results_df)
         # if not results_df.empty:
         #     for product in results_df["product_name"]:
         #         st.write(f"- {product}")

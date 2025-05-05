@@ -1,4 +1,4 @@
-import streamlit as st
+t_import streamlit as st
 import pandas as pd
 from rule_based_script__v3 import disease_product_mapping, filter_products
 
@@ -162,7 +162,7 @@ if submit:
         product_ids, count = filter_products(df_pet_info, df_products)
     
     # Display the filtered products
-        st.write(f"Pet Profile: {pet_profile}")
+        st.write(f"Pet Profile: {df_pet_info}")
         st.write(f"Recommended Products: {product_ids}")
 
  #        st.markdown("🍽️ **Recommended Products:**")

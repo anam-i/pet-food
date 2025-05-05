@@ -159,7 +159,6 @@ if submit:
             "allergy": has_allergy == "Yes",
             "allergic_to": selected_allergies
         }])
-
 	product_ids, count = filter_products(df_pet_profile, df_products)
     
     # Display the filtered products

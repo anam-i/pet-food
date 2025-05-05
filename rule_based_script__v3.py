@@ -602,18 +602,25 @@ def filter_products(pet_profile, df_products):
 
 
 ####################################################################################
-def add_recommendations_to_pets(pet_info_df, df_products):
-    """
-    Adds product recommendations directly to the input DataFrame.
-    Modifies the DataFrame in-place for memory efficiency.
-    """
-    if 'Recommended_Products' not in pet_info_df.columns:
-        pet_info_df['Recommended_Products'] = None
-        pet_info_df['Recommendations_Count'] = 0
-        }
-        #print("pet_profile",pet_profile)
-        product_ids, count = filter_products(pet_profile, df_products)
-        pet_info_df.at[idx, 'Recommended_Products'] = product_ids
-        pet_info_df.at[idx, 'Recommendations_Count'] = int(count)
+    product_ids, count = filter_products(pet_profile, df_products)
+    
+    # Display the filtered products
+    st.write(f"Pet Profile: {pet_profile}")
+    st.write(f"Recommended Products: {product_ids}")
 
-    return pet_info_df
+
+# def add_recommendations_to_pets(pet_info_df, df_products):
+    # """
+    # Adds product recommendations directly to the input DataFrame.
+    # Modifies the DataFrame in-place for memory efficiency.
+    # """
+    # if 'Recommended_Products' not in pet_info_df.columns:
+    #     pet_info_df['Recommended_Products'] = None
+    #     pet_info_df['Recommendations_Count'] = 0
+    #     }
+    #     #print("pet_profile",pet_profile)
+    #     product_ids, count = filter_products(pet_profile, df_products)
+    #     pet_info_df.at[idx, 'Recommended_Products'] = product_ids
+    #     pet_info_df.at[idx, 'Recommendations_Count'] = int(count)
+
+    # return pet_info_df

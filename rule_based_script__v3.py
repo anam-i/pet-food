@@ -524,7 +524,7 @@ def filter_products(df_pet_info, df_products):
              df_filtered = filter_by_condition(df_filtered, f'Ingredients_{ingredient}', 0)
 
     # Filter by body score
-    bds = pet_profile['Body Score (BDS)']
+    bds = df_pet_info['Body Score (BDS)']
     if bds >= 7: # >8 Means Obesity  and >7 Overweight
         df_filtered = filter_by_condition(df_filtered, 'for_weight management', 1)
         df_filtered = filter_by_condition(df_filtered, 'not_for_overweight', 0)
@@ -566,7 +566,7 @@ def filter_products(df_pet_info, df_products):
 
     # Filter by breed size and activity level
     df_filtered = filter_by_condition(df_filtered, f'breed_size_{df_pet_info["Breed Size"]}', 1)
-    if pet_profile['Activity Level'] == 'active':
+    if df_pet_info['Activity Level'] == 'active':
         df_filtered = filter_by_condition(df_filtered, 'not_for_active pets', 0)
         df_filtered = filter_by_condition(df_filtered, 'category_high calorie', 1)
         if len(df_filtered)>=10:

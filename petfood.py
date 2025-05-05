@@ -135,7 +135,7 @@ if submit:
         errors.append("Please select an activity level.")
     if has_allergy is None:
         errors.append("Please select whether the pet has allergies.")
-    if main_health_condition == "-- Select main issue --":
+    if main_issue == "-- Select main issue --":
         errors.append("Please select a main health issue.")
 
     if errors:

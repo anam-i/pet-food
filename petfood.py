@@ -160,15 +160,21 @@ if submit:
             "allergic_to": selected_allergies
         }])
 
-        results_df = filter_products(df_pet_info, df_products)
+	product_ids, count = filter_products(df_pet_profile, df_products)
+    
+    # Display the filtered products
+    st.write(f"Pet Profile: {pet_profile}")
+    st.write(f"Recommended Products: {product_ids}")
 
-        st.markdown("🍽️ **Recommended Products:**")
-	# Convert filtered results to DataFrame
-        df_filtered = pd.DataFrame(results_df)
+ #        st.markdown("🍽️ **Recommended Products:**")
+	# # Convert filtered results to DataFrame
+ #        df_filtered = pd.DataFrame(results_df)
 	
-	# Display the filtered DataFrame
-        st.write("Filtered Product Recommendations:")
-        st.dataframe(results_df)
+	# # Display the filtered DataFrame
+ #        st.write("Filtered Product Recommendations:")
+ #        st.dataframe(results_df)
+
+
         # if not results_df.empty:
         #     for product in results_df["product_name"]:
         #         st.write(f"- {product}")

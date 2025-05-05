@@ -106,7 +106,7 @@ with st.form("pet_form"):
     other_issues = st.multiselect(
         "Other Health Issues (up to 2)", health_conditions,
         placeholder="Choose up to two issues",
-        max_selections=2
+        max_selections=3
     )
 
     # Cat-specific (optional)

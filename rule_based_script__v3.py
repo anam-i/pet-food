@@ -566,7 +566,7 @@ def filter_products(df_pet_info, df_products):
 
     # Filter by breed size and activity level
     df_filtered = filter_by_condition(df_filtered, f'breed_size_{df_pet_info["breed_size"]}', 1)
-    if df_pet_info['Activity Level'] == 'active':
+    if df_pet_info['activity level'] == 'active':
         df_filtered = filter_by_condition(df_filtered, 'not_for_active pets', 0)
         df_filtered = filter_by_condition(df_filtered, 'category_high calorie', 1)
         if len(df_filtered)>=10:

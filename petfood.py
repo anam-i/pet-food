@@ -99,10 +99,10 @@ with st.form("pet_form"):
     body_score = st.slider("Body Score (1-9)", min_value=1, max_value=9, step=1)
 
     # Main health issue: exactly 1
-    main_health_condition = st.selectbox("Main Health Issue", ["-- Select main issue --"] + health_conditions)
+    main_issue = st.selectbox("Main Health Issue", ["-- Select main issue --"] + health_conditions)
 
     # Other issues: up to 2
-    other_health_conditions = st.multiselect(
+    other_issues = st.multiselect(
         "Other Health Issues (up to 2)", health_conditions,
         placeholder="Choose up to two issues",
         max_selections=2
@@ -148,8 +148,8 @@ if submit:
             "weight": weight,
             "age (months)": age,
             "activity level": activity_level,
-            "main issue": main_health_condition,
-            "other issues": other_health_conditions,
+            "main issue": main_issue,
+            "other issues": other_issues,
             "gender": has_gender,
             "breed": breed_name,
             "breed_size": breed_size,

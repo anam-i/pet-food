@@ -166,7 +166,7 @@ if submit:
     # Filter rows from the CSV where Product_id matches
 recommended_products = df_productdata[df_productdata['Product_ID'].isin(product_ids)]
     # Display the filtered products
-st.write(f"Recommended Products: {product_ids}")
+# st.write(f"Recommended Products: {product_ids}")
 	# Display the product names in Streamlit
 st.write("### Recommended Products:")
 for _, row in recommended_products.iterrows():

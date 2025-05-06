@@ -537,16 +537,16 @@ def filter_products(df_pet_info, df_products):
         df_filtered = filter_by_condition(df_filtered, 'category_high protein', 1)
 
     # Filter by pregnancy/lactation
-    if df_pet_info.iloc[0]['pregnant'] == 1:
+    if df_pet_info.iloc[0]['pregnant'] == TRUE:
         life_stage = 'growth'
         df_filtered = filter_by_condition(df_filtered, 'not_for_pregnancy', 0)
 
-    if df_pet_info.iloc[0]['lactating'] == 1:
+    if df_pet_info.iloc[0]['lactating'] == TRUE:
         life_stage = 'growth'
         df_filtered = filter_by_condition(df_filtered, 'not_for_lactation', 0)
 
     # Filter by life stage
-    if not (df_pet_info.iloc[0]['pregnant'] == 1 or df_pet_info.iloc[0]['lactating'] == 1):
+    if not (df_pet_info.iloc[0]['pregnant'] == TRUE or df_pet_info.iloc[0]['lactating'] == TRUE):
       life_stage = df_pet_info.iloc[0]['life_stage']
     df_filtered = filter_life_stage(df_filtered, life_stage)
     #print("rows after life_stage:",len(df_filtered))
@@ -572,7 +572,7 @@ def filter_products(df_pet_info, df_products):
         if len(df_filtered)>=10:
             df_filtered = filter_by_condition(df_filtered, 'category_energy-dense', 1)
 
-    return df_filtered.iloc[:5]['Product_ID'].tolist(), len(df_filtered)
+    return df_filtered['Product_ID'].tolist(),len(df_filtered)
 
 
     

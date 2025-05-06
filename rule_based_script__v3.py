@@ -498,7 +498,6 @@ def filter_life_stage(df, life_stage):
 
 def filter_products(df_pet_info, df_products):
     """Main filtering logic for pet products."""
-    # species_col = f"Species_{df_pet_info.iloc[0]['species']}"
     species_col = f"Species_{df_pet_info.iloc[0]['species']}"
     df_filtered = filter_by_condition(df_products, species_col, 1)
 
@@ -507,22 +506,20 @@ def filter_products(df_pet_info, df_products):
     main_issue = df_pet_info.iloc[0]['main_issue'] 
     if main_issue in disease_product_mapping:
         disease_info = disease_product_mapping[main_issue]
-        #print("disease_info",disease_info)
         logger.info(f"Filtering for main issue: {main_issue}")
         df_filtered = filter_for_tags(df_filtered, disease_info)
         df_filtered = filter_not_for_tags(df_filtered, disease_info)
         df_filtered = filter_type_tags(df_filtered, disease_info)
         df_filtered = filter_category_tags(df_filtered, disease_info)
         df_filtered = filter_has_tags(df_filtered, disease_info)
-        #print("rows after category:",len(df_filtered))
 
     # Filter by allergies
     if df_pet_info.iloc[0]['allergy'] == 1:
         for ingredient in df_pet_info['allergic_to']:
             if ingredient == 'unknown':
-              filter_by_condition(df_filtered, 'category_non-allergenic', 1)
+            filter_by_condition(df_filtered, 'category_non-allergenic', 1)
             else:
-             df_filtered = filter_by_condition(df_filtered, f'Ingredients_{ingredient}', 0)
+            df_filtered = filter_by_condition(df_filtered, f'Ingredients_{ingredient}', 0)
 
     # Filter by body score
     bds = df_pet_info.iloc[0]['body score (bds)']
@@ -575,7 +572,6 @@ def filter_products(df_pet_info, df_products):
         if len(df_filtered)>=10:
           df_filtered = filter_by_condition(df_filtered, 'category_energy-dense', 1)
 
-    print("Columns in df_filtered:", df_filtered.columns.tolist())
     return df_filtered['Product_ID'].tolist(), len(df_filtered)
 
 

@@ -575,7 +575,7 @@ def filter_products(df_pet_info, df_products):
         if len(df_filtered)>=10:
           df_filtered = filter_by_condition(df_filtered, 'category_energy-dense', 1)
 
-
+    print("Columns in df_filtered:", df_filtered.columns.tolist())
     return df_filtered['Product_ID'].tolist(), len(df_filtered)
 
 

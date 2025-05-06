@@ -524,8 +524,7 @@ def filter_products(df_pet_info, df_products):
                 df_filtered = filter_by_condition(df_filtered, f'Ingredients_{ingredient}', 0)
 
     # Filter by body score
-    # bds = df_pet_info.iloc[0]['body score (bds)']
-    bds = df_pet_info['body score (bds)']
+    bds = df_pet_info.iloc[0]['body score (bds)']
     if bds >= 7: # >8 Means Obesity  and >7 Overweight
         df_filtered = filter_by_condition(df_filtered, 'for_weight management', 1)
         df_filtered = filter_by_condition(df_filtered, 'not_for_overweight', 0)

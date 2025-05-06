@@ -582,9 +582,9 @@ def filter_products(df_pet_info, df_products):
 ####################################################################################
     product_ids, count = filter_products(df_pet_info, df_products)
     
-    # Display the filtered products
-    st.write(f"Pet Profile: {df_pet_info}")
-    st.write(f"Recommended Products: {product_ids}")
+    # # Display the filtered products
+    # st.write(f"Pet Profile: {df_pet_info}")
+    # st.write(f"Recommended Products: {product_ids}")
 
 
 # def add_recommendations_to_pets(pet_info_df, df_products):

@@ -584,6 +584,10 @@ def filter_products(df_pet_info, df_products):
     # st.write(f"Pet Profile: {df_pet_info}")
     st.write(f"Recommended Products: {product_ids}")
 
+    st.write("### Recommended Products:")
+    for _, row in recommended_products.iterrows():
+	    st.write(f"- {row['Product_Name']} (ID: {row['Product_ID']})")
+
 
 # def add_recommendations_to_pets(pet_info_df, df_products):
     # """

@@ -570,7 +570,7 @@ def filter_products(df_pet_info, df_products):
         df_filtered = filter_by_condition(df_filtered, 'not_for_active pets', 0)
         df_filtered = filter_by_condition(df_filtered, 'category_high calorie', 1)
         if len(df_filtered)>=10:
-          df_filtered = filter_by_condition(df_filtered, 'category_energy-dense', 1)
+            df_filtered = filter_by_condition(df_filtered, 'category_energy-dense', 1)
 
     return df_filtered['Product_ID'].tolist(), len(df_filtered)
 

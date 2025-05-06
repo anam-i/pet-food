@@ -81,8 +81,8 @@ if has_allergy == "Yes":
 
 # Conditional display for lactation and pregnancy
 if has_gender == "Female":
-    has_lactation = st.radio("Lactating", options=["TRUE", "FALSE"], index=None, format_func=lambda x: "TRUE" if x else "FALSE")
-    has_pregnant = st.radio("Pregnant", options=["TRUE", "FALSE"], index=None, format_func=lambda x: "TRUE" if x else "FALSE")
+    has_lactation = st.radio("Lactating", options=[True,False], index=None, format_func=lambda x: "TRUE" if x else "FALSE")
+    has_pregnant = st.radio("Pregnant", options=[True,False], index=None, format_func=lambda x: "TRUE" if x else "FALSE")
 
 with st.form("pet_form"):
     breed_size = st.selectbox("Breed Size", ["-- Select breed size --", "Small", "Medium", "Large"])

@@ -109,14 +109,14 @@ with st.form("pet_form"):
         max_selections=3
     )
 
-    # Cat-specific (optional)
-    cat_specific_conditions_selected = []
-    if species == "Cat":
-        cat_specific_conditions_selected = st.multiselect(
-            "Cat-Specific Conditions",
-            cat_specific_conditions,
-            placeholder="Choose an option"
-        )
+    # # Cat-specific (optional)
+    # cat_specific_conditions_selected = []
+    # if species == "Cat":
+    #     cat_specific_conditions_selected = st.multiselect(
+    #         "Cat-Specific Conditions",
+    #         cat_specific_conditions,
+    #         placeholder="Choose an option"
+    #     )
 
     submit = st.form_submit_button("Get Recommendations")
 

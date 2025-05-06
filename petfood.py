@@ -34,7 +34,7 @@ health_conditions = sorted([
 	"hypocalcemia", "hypothyroidism", "inflammatory_bowel_disease", "inflammatory_mediators", "intervertebral_disc_disease",
 	"interstitial_cystitis", "kidney_disease", "lymphangiectasia", "lymphoma", "mast_cell_tumor", "megaesophagus", "mental_health_disorder",
 	"metabolic/endocrine", "mitral_valve_disease", "obesity", "osteoarthritis", "osteosarcoma", "otitis", "oxalate_stones", "pancreatitis",
-	"periodontal_disease", "portosystemic_shunt", "protein_losing_enteropathy", "proteinuria", "urinary_problems", "ringworm", "seizure",
+	"periodontal_disease", "portosystemic_shunt", "protein_losing_enteropathy", "proteinuria", "ringworm", "seizure",
 	"short_bowel_syndrome", "skin_rash", "struvite", "surgery", "urinary_problems", "urinary_tract_infection", "vestibular_disease",
 	"vision_problem", "weak immunity", "underweight", "hypertrophic_cardiomyopathy", "hypertrophic_osteodystrophy"
 ])

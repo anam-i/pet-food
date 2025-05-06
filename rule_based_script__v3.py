@@ -107,12 +107,12 @@ disease_product_mapping = {
         "for": ["for_hepatitis","for_liver health"],
         "not_for": ["not_for_liver failure"],
         "category": ["category_moderate fat"]
-},
+    },
     "hepatopathy": {
         "for": ["for_hepatitis","for_liver health"],
         "not_for": ["not_for_liver failure","not_for_catabolic states"],
         "category": ["category_low fat","category_digestive care"]
-},
+    },
     # ===== RENAL/URINARY =====
     "kidney_disease": {
         "for": ["for_kidney health"],
@@ -408,17 +408,17 @@ disease_product_mapping = {
         "for": ["for_liver_health","for_metabolic support","for_general health"],
         "not_for": ["not_for_liver failure"],
         "category": ["category_digestive care","category_natural nutrition","category_plant_based"]
-},
+    },
     "hypocalcemia": {
         "for": ["for_bone and joint health","for_general health","for_healthy immune system","for_recovery support"],
         "not_for": ["not_for_kidney disease"],
         "category": ["category_multifunction","category_high energy"]
-},
+    },
     "hypertrophic_osteodystrophy": {
         "for": ["for_bone and joint health","for_general health"],
         "not_for": [],
         "category": ["category_multifunction","category_moderate calorie","category_moderate fat","category_digestive care"]
-},
+    },
     "short_bowel_syndrome": {
         "for": ["for_gastrointestinal health","for_hydration support","for_diarrhea"],
         "not_for": ["not_for_fat intolerant","not_for_liver failure","not_for_dehydration","category_high fiber"],
@@ -430,13 +430,13 @@ disease_product_mapping = {
         "for": ["for_urinary_health","for_feline luts","for_calming support"],
         "not_for": ["not_for_oxalate stones","not_for_struvite","not_for_truvite urolithiasis"],
         "category": []
-},
+    },
     "high_metabolic_needs": {
         "for": ["for_maintain muscle mass"],
         "not_for": ["not_for_overweight"],
         "category": ["category_energy-dense","category_high energy", "category_high protein"]
-}
     }
+}
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

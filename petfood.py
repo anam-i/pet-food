@@ -53,7 +53,7 @@ life_stages = ["Growth", "Adult", "Senior"]
 # ------------------ Streamlit UI ------------------
 
 st.set_page_config(page_title="Pet Nutrition Recommender", layout="centered")
-st.title("🐾🐶Pet Food Recommendation Tool Rule-Based Recommendations🐱🐾")
+st.title("🐾🐶Pet Food Recommendation Tool - Rule-Based Recommendations🐱🐾")
 
 # Gender selector
 has_gender = st.radio("Gender", options=["Male", "Female"], index=None)

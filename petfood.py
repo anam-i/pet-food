@@ -153,8 +153,8 @@ recommended_products = df_productdata[df_productdata['Product_ID'].isin(product_
     # Display the filtered products
 st.write(f"Recommended Products: {product_ids}")
 	# Display the product names in Streamlit
-# st.write("### Recommended Products:")
-# for _, row in recommended_products.iterrows():
-# 	st.write(f"- {row['Product_Name']} (ID: {row['Product_ID']})")
+st.write("### Recommended Products:")
+for _, row in recommended_products.iterrows():
+	st.write(f"- {row['Product_Name']} (ID: {row['Product_ID']})")
 
 

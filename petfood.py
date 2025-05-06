@@ -25,18 +25,18 @@ cat_breeds = sorted([
 health_conditions = sorted([
 	"addisons_disease", "adrenal_disorders", "aging", "anxiety", "arthritis", "atopic_dermatitis",
 	"autoimmune diseases", "brachycephalic_syndrome", "bladder_stones", "cancer", "canine_parvovirus",
-	"catabolic_states", "cachexia", "chronic infections", "cognitive_dysfunction", "congestive_heart_failure",
+	"catabolic states", "cachexia", "chronic infections", "cognitive_dysfunction", "congestive_heart_failure",
 	"constipation", "cruciate_ligament_tear", "cushings_syndrome", "debilitation", "dehydration", "degenerative_myelopathy",
-	"dental_issue", "diabetes", "diarrhea", "dilated cardiomyopathy", "epilepsy", "ear_infections",
+	"dental_issue", "diabetes", "diarrhea", "dilated_cardiomyopathy", "epilepsy", "ear_infections",
 	"feline_asthma", "feline_luts", "flea_allergy_dermatitis", "food_sensitivity", "gallbladder_disease", "gastroenteritis",
-	"gastrointestinal", "hairballs", "heart_murmur", "hepatic_lipidosis", "hepatitis", "hepatopathy", "high_metabolic_needs",
-	"hip_dysplasia", "hot_spots", "hyperglycemia", "hyperlipidemia", "hyperthyroidism", "hypertension (high blood pressure)",
+	"hairballs", "heart_murmur", "hepatic_lipidosis", "hepatitis", "hepatopathy", "high_metabolic_needs",
+	"hip_dysplasia", "hot_spots", "hyperglycemia", "hyperlipidemia", "hyperthyroidism", "hypertension",
 	"hypocalcemia", "hypothyroidism", "inflammatory_bowel_disease", "inflammatory_mediators", "intervertebral_disc_disease",
 	"interstitial_cystitis", "kidney_disease", "lymphangiectasia", "lymphoma", "mast_cell_tumor", "megaesophagus", "mental_health_disorder",
 	"metabolic/endocrine", "mitral_valve_disease", "obesity", "osteoarthritis", "osteosarcoma", "otitis", "oxalate_stones", "pancreatitis",
 	"periodontal_disease", "portosystemic_shunt", "protein_losing_enteropathy", "proteinuria", "urinary_problems", "ringworm", "seizure",
 	"short_bowel_syndrome", "skin_rash", "struvite", "surgery", "urinary_problems", "urinary_tract_infection", "vestibular_disease",
-	"vision_problem", "weak immunity"
+	"vision_problem", "weak immunity", "underweight", "hypertrophic_cardiomyopathy", "hypertrophic_osteodystrophy"
 ])
 
 allergy_list = sorted([

@@ -575,7 +575,7 @@ def filter_products(df_pet_info, df_products):
     return df_filtered['Product_ID'].tolist(), len(df_filtered)
 
 
-####################################################################################
+    
     product_ids, count = filter_products(df_pet_info, df_products)
     
     # # Display the filtered products

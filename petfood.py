@@ -146,7 +146,9 @@ if submit:
             "allergic_to": selected_allergies
         }])
         # product_ids, count = filter_products(df_pet_info, df_products)
-
+    # Display the filtered products
+    st.write(f"Pet Profile: {df_pet_info}")
+    st.write(f"Recommended Products: {product_ids}")
 
     # Filter rows from the CSV where Product_id matches
 # recommended_products = df_productdata[df_productdata['Product_ID'].isin(product_ids)]

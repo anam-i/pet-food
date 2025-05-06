@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from rule_based_script__v3 import disease_product_mapping, filter_products
+from rule_based_script__v3 import disease_product_mapping, filter_products, filter_by_condition, filter_for_tags, filter_not_for_tags, filter_type_tags, filter_category_tags, filter_has_tags, filter_life_stage
 
 # Load product data
 df_products = pd.read_csv("encoded_all_products.csv")

@@ -517,9 +517,9 @@ def filter_products(df_pet_info, df_products):
     if df_pet_info.iloc[0]['allergy'] == 1:
         for ingredient in df_pet_info['allergic_to']:
             if ingredient == 'unknown':
-            filter_by_condition(df_filtered, 'category_non-allergenic', 1)
+                filter_by_condition(df_filtered, 'category_non-allergenic', 1)
             else:
-            df_filtered = filter_by_condition(df_filtered, f'Ingredients_{ingredient}', 0)
+                df_filtered = filter_by_condition(df_filtered, f'Ingredients_{ingredient}', 0)
 
     # Filter by body score
     bds = df_pet_info.iloc[0]['body score (bds)']

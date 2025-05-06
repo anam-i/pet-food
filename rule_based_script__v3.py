@@ -576,7 +576,7 @@ def filter_products(df_pet_info, df_products):
           df_filtered = filter_by_condition(df_filtered, 'category_energy-dense', 1)
 
 
-    return df_filtered['Product_ID'].tolist(),len(df_filtered)
+    return df_filtered['product_id'].tolist(), len(df_filtered)
 
 
 ####################################################################################

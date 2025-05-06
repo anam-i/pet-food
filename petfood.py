@@ -11,7 +11,7 @@ df_productdata = pd.read_csv("Products_final_cleaned.csv")
 dog_breeds = sorted([
     "Beagle", "Boxer", "Bulldog", "Dachshund", "German Shepherd",
     "Golden Retriever", "Labrador Retriever", "Poodle", "Shih Tzu", "Yorkshire Terrier",
-	"Bullmastiff", "English spaniel", "Husky", "Doberman", "Beagle", "English bulldog",
+	"Bullmastiff", "English spaniel", "Husky", "Doberman", "English bulldog",
 	"Shiba Inu", "Australian shepherd", "Pinscher"
 ])
 
@@ -23,24 +23,20 @@ cat_breeds = sorted([
 ])
 
 health_conditions = sorted([
-    "Addisons_disease", "Adrenal_disorders", "Aging", "Anxiety", "Arthritis", "Atopic_dermatitis",
-    "Autoimmune Diseases", "Brachycephalic_syndrome", "Bladder_stones", "Cancer", "Canine_parvovirus",
-    "Catabolic_states", "cachexia", "Chronic Infections", "Cognitive_dysfunction", "Congestive_heart_failure",
-    "Constipation", "Cruciate_ligament_tear", "Cushings_syndrome", "Debilitation", "Dehydration", "Degenerative_myelopathy",
-    "Dental_issue", "Diabetes", "Diarrhea", "Dilated cardiomyopathy", "Epilepsy", "Ear_infections",
-    "Feline_asthma", "Feline_luts", "Flea_allergy_dermatitis", "Food_sensitivity", "Gallbladder_disease", "Gastroenteritis",
-    "Gastrointestinal", "Hairballs", "Heart_murmur", "Hepatic_lipidosis", "Hepatitis", "Hepatopathy", "High_metabolic_needs",
-    "Hip_dysplasia", "Hot_spots", "Hyperglycemia", "Hyperlipidemia", "Hyperthyroidism", "Hypertension (High Blood Pressure)",
-    "Hypocalcemia", "Hypothyroidism", "Inflammatory_bowel_disease", "Inflammatory_mediators", "Intervertebral_disc_disease",
-    "interstitial_cystitis", "Kidney_disease", "Lymphangiectasia", "Lymphoma", "Mast_cell_tumor", "Megaesophagus", "Mental_health_disorder",
-    "Metabolic/Endocrine", "Mitral_valve_disease", "Obesity", "Osteoarthritis", "Osteosarcoma", "Otitis", "Oxalate_stones", "Pancreatitis",
-    "Periodontal_disease", "portosystemic_shunt", "Protein_losing_enteropathy", "Proteinuria", "Renal/Urinary", "Ringworm", "Seizure",
-    "Short_bowel_syndrome", "Skin_rash", "Struvite", "Surgery", "Urinary_problems", "Urinary_tract_infection", "Vestibular_disease",
-    "Vision_problem", "Weak Immunity"
-])
-
-cat_specific_conditions = sorted([
-    "Hairballs", "PLE", "Lymphangiectasia", "Feline_luts"
+	"addisons_disease", "adrenal_disorders", "aging", "anxiety", "arthritis", "atopic_dermatitis",
+	"autoimmune diseases", "brachycephalic_syndrome", "bladder_stones", "cancer", "canine_parvovirus",
+	"catabolic_states", "cachexia", "chronic infections", "cognitive_dysfunction", "congestive_heart_failure",
+	"constipation", "cruciate_ligament_tear", "cushings_syndrome", "debilitation", "dehydration", "degenerative_myelopathy",
+	"dental_issue", "diabetes", "diarrhea", "dilated cardiomyopathy", "epilepsy", "ear_infections",
+	"feline_asthma", "feline_luts", "flea_allergy_dermatitis", "food_sensitivity", "gallbladder_disease", "gastroenteritis",
+	"gastrointestinal", "hairballs", "heart_murmur", "hepatic_lipidosis", "hepatitis", "hepatopathy", "high_metabolic_needs",
+	"hip_dysplasia", "hot_spots", "hyperglycemia", "hyperlipidemia", "hyperthyroidism", "hypertension (high blood pressure)",
+	"hypocalcemia", "hypothyroidism", "inflammatory_bowel_disease", "inflammatory_mediators", "intervertebral_disc_disease",
+	"interstitial_cystitis", "kidney_disease", "lymphangiectasia", "lymphoma", "mast_cell_tumor", "megaesophagus", "mental_health_disorder",
+	"metabolic/endocrine", "mitral_valve_disease", "obesity", "osteoarthritis", "osteosarcoma", "otitis", "oxalate_stones", "pancreatitis",
+	"periodontal_disease", "portosystemic_shunt", "protein_losing_enteropathy", "proteinuria", "urinary_problems", "ringworm", "seizure",
+	"short_bowel_syndrome", "skin_rash", "struvite", "surgery", "urinary_problems", "urinary_tract_infection", "vestibular_disease",
+	"vision_problem", "weak immunity"
 ])
 
 allergy_list = sorted([
@@ -85,10 +81,8 @@ if has_allergy == "Yes":
 
 # Conditional display for lactation and pregnancy
 if has_gender == "Female":
-    has_lactation = st.radio("Lactating", options=["Yes", "No"], index=None)
-    has_pregnant = st.radio("Pregnant", options=["Yes", "No"], index=None)
-
-# ------------------ Main Form ------------------
+    has_lactation = st.radio("Lactating", options=["TRUE", "FALSE"], index=None)
+    has_pregnant = st.radio("Pregnant", options=["TRUE", "FALSE"], index=None)
 
 with st.form("pet_form"):
     breed_size = st.selectbox("Breed Size", ["-- Select breed size --", "Small", "Medium", "Large"])
@@ -108,15 +102,6 @@ with st.form("pet_form"):
         placeholder="Choose up to two issues",
         max_selections=3
     )
-
-    # # Cat-specific (optional)
-    # cat_specific_conditions_selected = []
-    # if species == "Cat":
-    #     cat_specific_conditions_selected = st.multiselect(
-    #         "Cat-Specific Conditions",
-    #         cat_specific_conditions,
-    #         placeholder="Choose an option"
-    #     )
 
     submit = st.form_submit_button("Get Recommendations")
 
@@ -155,8 +140,8 @@ if submit:
             "breed": breed_name,
             "breed_size": breed_size,
             "body score (bds)": body_score,
-            "pregnant": has_pregnant if has_gender == "Female" else "No",
-            "lactating": has_lactation if has_gender == "Female" else "No",
+            "pregnant": has_pregnant if has_gender == "Female" else "FALSE",
+            "lactating": has_lactation if has_gender == "Female" else "FALSE",
             "allergy": has_allergy == "Yes",
             "allergic_to": selected_allergies
         }])
